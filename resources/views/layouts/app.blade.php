@@ -209,6 +209,16 @@
                                     </p>
                                 </a>
                             </li>
+                            <li class="nav-item">
+                                <a href="{{ url('clase') }}"   
+                                    class="{{ Request::path() === 'clase' ? 'nav-link active' : 'nav-link' }}">
+                                    <i class="nav-icon fas fa-bars"></i>
+                                    <p>
+                                        Clases
+                                    </p>
+                                </a>
+                            </li>
+
 
                             <li class="nav-item">
                                 <a href="{{ url('segalumno') }}"   
