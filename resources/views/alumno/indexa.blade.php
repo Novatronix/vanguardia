@@ -9,8 +9,6 @@
 <button type="button" class="btn btn-success float-right">Agregar alumno</button></a>
 </h2>
   
-
-<h2>Lista de Alumnos <a href="alumno/create"> <button type="button" class="btn btn-success float-right">Agregar alumno</button></a></h2>
   <table class="table table-hover">
     <thead>
       <tr>
@@ -37,7 +35,7 @@
         <td>
           <form action=" {{route('alumno.destroy', $alumno->id_alumno) }}" method="POST">
           
-          <a href="{{ route('alumno.show', $alumno->id_alumno) }}"><button type="button" class="btn btn-secondary">ver</button></a> 
+          <a href="{{ route('alumno.show', $alumno->id_alumno) }}"><button type="button" class="btn btn-secondary">Ver</button></a> 
           <a href="{{ route('alumno.edit', $alumno->id_alumno) }}"><button type="button" class="btn btn-primary">Editar</button></a>
           @csrf
           @method('DELETE')

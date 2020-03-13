@@ -150,13 +150,12 @@
             </nav>
             <!-- /.navbar -->
 
-            <!-- Main Sidebar Container -->
+            <!-- Main Sidebar Container  -->
             <aside class="main-sidebar sidebar-dark-primary elevation-4">
                 <!-- Brand Logo -->
                 <a href="{{ url('/') }}" class="brand-link">
-                    <img src="{{ asset('dist/img/AdminLTELogo.png') }}" alt="AdminLTE Logo" class="brand-image img-circle elevation-3"
-                        style="opacity: .8">
-                    <span class="brand-text font-weight-light">System Team</span>
+                     
+                    <span class="brand-text font-weight-light">Seguimiento Estudiantil</span>
                 </a>
 
                 <!-- Sidebar -->
@@ -203,7 +202,7 @@
                             <li class="nav-item">
                                 <a href="{{ url('alumno') }}"   
                                     class="{{ Request::path() === 'alumno' ? 'nav-link active' : 'nav-link' }}">
-                                    <i class="nav-icon fas fa-users"></i>
+                                    <i class="nav-icon fas fa-user-tie"></i>
                                     <p>
                                         Alumnos
                                     </p>
@@ -212,9 +211,27 @@
                             <li class="nav-item">
                                 <a href="{{ url('clase') }}"   
                                     class="{{ Request::path() === 'clase' ? 'nav-link active' : 'nav-link' }}">
-                                    <i class="nav-icon fas fa-bars"></i>
+                                    <i class="nav-icon fas fa-book"></i>
                                     <p>
                                         Clases
+                                    </p>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="{{ url('carrera') }}"   
+                                    class="{{ Request::path() === 'carrera' ? 'nav-link active' : 'nav-link' }}">
+                                    <i class="nav-icon fas fa-graduation-cap"></i>
+                                    <p>
+                                        Carrera
+                                    </p>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="{{ url('periodo') }}"   
+                                    class="{{ Request::path() === 'periodo' ? 'nav-link active' : 'nav-link' }}">
+                                    <i class="nav-icon fas fa-calendar-alt"></i>
+                                    <p>
+                                        Periodo
                                     </p>
                                 </a>
                             </li>
@@ -223,9 +240,9 @@
                             <li class="nav-item">
                                 <a href="{{ url('segalumno') }}"   
                                     class="{{ Request::path() === 'segalumno' ? 'nav-link active' : 'nav-link' }}">
-                                    <i class="nav-icon fas fa-users"></i>
+                                    <i class="nav-icon fas fa-address-book"></i>
                                     <p>
-                                        Seguimiento del Alumno
+                                        Seguimiento 
 
                             <li class="nav-item">
                                 <a href="{{ url('usuarios') }}"
