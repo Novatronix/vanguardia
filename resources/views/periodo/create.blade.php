@@ -5,28 +5,24 @@
 <div class="container">
     <div class="row">
         <div class="col-sm-4">
-            <form action="/carrera" method="POST">
+            <form action="/periodo" method="POST">
             @csrf
-                <div class="form-group">
-                    <label for="id_periodo">ID Periodo</label>
-                    <input type="text" class="form-control" name="periodo" placeholder="Ingrese id del periodo">
-                </div>
-
+                
                 <div class="form-group">
                     <label for="num_periodo">Numero periodo</label>
-                    <input type="text" class="form-control" name="nombre_carrera" placeholder="Ingrese el numero del periodo">
+                    <input type="text" class="form-control" name="num_periodo" placeholder="Ingrese el numero del periodo">
                 </div>
                 <div class="form-group">
                     <label for="semestre">Semestre</label>
-                    <input type="text" class="form-control" name="nombre_carrera" placeholder="Ingrese el semestre">
+                    <input type="text" class="form-control" name="semestre" placeholder="Ingrese el semestre">
                 </div>
                 <div class="form-group">
                     <label for="año">Año</label>
-                    <input type="text" class="form-control" name="nombre_carrera" placeholder="Ingrese el año">
+                    <input type="text" class="form-control" name="año" placeholder="Ingrese el año">
                 </div>
                 <div class="form-group">
                     <label for="descripcion">Descripcion</label>
-                    <input type="text" class="form-control" name="nombre_carrera" placeholder="Ingrese una descripcion">
+                    <input type="text" class="form-control" name="descripcion" placeholder="Ingrese una descripcion">
                 </div>
 
 

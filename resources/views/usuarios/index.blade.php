@@ -26,8 +26,8 @@
         <td>
           <form action=" {{route('usuarios.destroy', $user->id) }}" method="POST">
           
-          <a href="{{ route('usuarios.show', $user->id) }}"><button type="button" class="btn btn-secondary">ver</button></a> 
-          <a href="{{ route('usuarios.edit', $user->id) }}"><button type="button" class="btn btn-primary">Editar</button></a>
+          
+          
           @csrf
           @method('DELETE')
           <button type="submit" class="btn btn-danger">Eliminar</button>

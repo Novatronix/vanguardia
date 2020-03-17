@@ -11,6 +11,10 @@ class UserController extends Controller
     
     public function index()
     {
+        if(!\Auth::check())
+        {
+            return redirect('/login');
+        }
         $users = User::all();
         return view('usuarios.index', ['users'=> $users]);
         //
@@ -19,6 +23,10 @@ class UserController extends Controller
    
     public function create()
     {
+        if(!\Auth::check())
+        {
+            return redirect('/login');
+        }
         return view('usuarios.create');
         //
     }
@@ -26,6 +34,10 @@ class UserController extends Controller
    
     public function store(Request $request)
     {
+        if(!\Auth::check())
+        {
+            return redirect('/login');
+        }
         $usuario = new User();
         $usuario-> name = request ('name');
         $usuario-> email = request ('email');
@@ -41,6 +53,10 @@ class UserController extends Controller
   
     public function show($id)
     {
+        if(!\Auth::check())
+        {
+            return redirect('/login');
+        }
         return view('usuarios.show', ['user' => User::findOrFail($id)]);
 
     }
@@ -48,6 +64,10 @@ class UserController extends Controller
    
     public function edit($id)
     {
+        if(!\Auth::check())
+        {
+            return redirect('/login');
+        }
         return view('usuarios.edit', ['user' => User::findOrFail($id)]);
         //
     }
@@ -55,6 +75,10 @@ class UserController extends Controller
   
     public function update(UserFormRequest $request, $id)
     {
+        if(!\Auth::check())
+        {
+            return redirect('/login');
+        }
         $usuario =  User::findOrFail($id);
         $usuario-> name = $request -> get('name');
         $usuario-> email = $request-> get ('email');

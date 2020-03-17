@@ -5,7 +5,7 @@
 
 <div class="container">
 <h2>Periodos Academicos <a href="periodo/create"> <button type="button" class="btn btn-success float-right">Agregar Periodo</button></a></h2>
-  <table class="table table-hover">
+<table class="table table-striped">
     <thead>
       <tr>
         <th scope="col">ID Periodo</th>

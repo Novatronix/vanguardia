@@ -5,7 +5,7 @@
 
 <div class="container">
 <h2>Carreras Pre Grado <a href="carrera/create"> <button type="button" class="btn btn-success float-right">Agregar Carrera</button></a></h2>
-  <table class="table table-hover">
+<table class="table table-striped">
     <thead>
       <tr>
         <th scope="col">ID Carrera</th>

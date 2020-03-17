@@ -1,15 +1,25 @@
 @extends('layouts.app')
 @section('content')
-    <div class="jumbotron jumbotron-fluid">
-        <div class="container">
-            <h1 class="display-4">{{ $alumnos->id_alumno}}</h1>
-            <p class="lead">{{$alumnos->nombre}}</p>
-            <p class="lead">{{$alumnos->apellidos}}</p>
-            <p class="lead">{{$alumnos->fecha_ingreso}}</p>
-            <p class="lead">{{$alumnos->genero}}</p>
-            <p class="lead">{{$alumnos->telefono}}</p>
-            <p class="lead">{{$alumnos->estado}}</p>
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <div class="card">
+                <div class="card-header">Resumen Alumno</div>
+
+                <div class="card-body">
+                <p class="lead">Numero de Cuenta: {{$alumnos->id_alumno}}</p>
+                <p class="lead">Nombre: {{$alumnos->nombre}}</p>
+                <p class="lead">Apellidos: {{$alumnos->apellidos}}</p>
+                <p class="lead">Fecha de Ingreso: {{$alumnos->fecha_ingreso}}</p>
+                <p class="lead">Genero: {{$alumnos->genero}}</p>
+                <p class="lead">Telefono: {{$alumnos->telefono}}</p>
+                <p class="lead">Estado: {{$alumnos->estado}}</p>
+                <a href="/alumno" class="btn btn-primary">Regresar</a>
+                </div>
+            </div>
         </div>
     </div>
+</div>
 
-@ednsection
+
+@endsection

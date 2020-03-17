@@ -14,16 +14,28 @@ class Alumnos extends Controller
 {
     public function index()
     {
+        if(!\Auth::check())
+        {
+            return redirect('/login');
+        }
         $alumnos = Alumno::all();
-        return view('alumno.indexa', ['alumnos'=> $alumnos]);
+        return view('alumno.index', ['alumnos'=> $alumnos]);
         //
     }
     public function create(){
+        if(!\Auth::check())
+        {
+            return redirect('/login');
+        }
         return view('alumno.create');
     }
 
     public function store(Request $request)
     {
+        if(!\Auth::check())
+        {
+            return redirect('/login');
+        }
         $alumnos = new Alumno();
         $alumnos-> id_alumno = request ('id_alumno');
         $alumnos-> nombre = request ('nombre');
@@ -35,6 +47,10 @@ class Alumnos extends Controller
 
         $alumnos->save();
 
+        if(!\Auth::check())
+        {
+            return redirect('/login');
+        }
         return redirect('/alumno');
         
         //
@@ -58,6 +74,10 @@ class Alumnos extends Controller
   
     public function update(UserFormRequest $request, $id_alumno)
     {
+        if(!\Auth::check())
+        {
+            return redirect('/login');
+        }
         $alumnos =  Alumno::findOrFail($id_alumno);
         $alumnos-> nombre = $request -> get('nombre');
         $alumnos-> apellidos = $request-> get ('apellidos');
@@ -75,6 +95,10 @@ class Alumnos extends Controller
 
     public function destroy($id)
     {
+        if(!\Auth::check())
+        {
+            return redirect('/login');
+        }
         $alumnos = Alumno::findOrFail($id);
         $alumnos->delete();
 
@@ -86,5 +110,31 @@ class Alumnos extends Controller
         Excel::import(new UsersImport, $file);
 
         return back() -> with('message', 'Se importo los datos');
+    }
+
+    public function importExcel()
+    {
+        /** El método load permite cargar el archivo definido como primer parámetro */
+        Excel::load('alumnos.xlsx', function ($reader) {
+            /**
+             * $reader->get() nos permite obtener todas las filas de nuestro archivo
+             */
+            foreach ($reader->get() as $key => $row) {
+                $alumnos = [
+                    'id_alumno' => $row['id_alumno'],
+                    'nombre' => $row['nombre'],
+                    'apellidos' => $row['apellidos'],
+                    'fecha_ingreso' => $row['fecha_ingreso'],
+                    'genero' => $row['genero'],
+                    'telefono' => $row['telefono'],
+                    'estado' => $row['estado'],
+                ];
+                /** Una vez obtenido los datos de la fila procedemos a registrarlos */
+                if (!empty($alumnos)) {
+                    DB::table('alumnos')->insert($alumnos);
+                }
+            }
+            echo 'Los alumnos han sido importados exitosamente';
+        });
     }
 }

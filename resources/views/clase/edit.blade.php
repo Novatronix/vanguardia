@@ -5,7 +5,7 @@
 <div class="container">
     <div class="row">
         <div class="col-sm-4">
-            <h3>Editar Carrera: {{$carreras->id_carrera}}</h3>
+            <h3>Editar Clase: {{$clases->id_clase}}</h3>
             @if ($errors->any())
                 <div class="alert alert-danger">
                     <ul>
@@ -16,21 +16,21 @@
                 </div>
             @endif
  
-            <form action="{{route('carrera.update', $carreras->id_carrera)}}" method="POST">
+            <form action="{{route('clase.update', $clases->id_clase)}}" method="POST">
 
             @method('PATCH')
             @csrf
                 <div class="form-group">
-                    <label for="id_carrera">Id Carrera</label>
+                    <label for="id_clase">Id Clase</label>
 
-                    <input type="text" class="form-control" name="id_carrera" value="{{ $carreras->id_carrera}}" placeholder="Ingrese el ID">
+                    <input type="text" class="form-control" name="id_clase" value="{{ $clases->id_clase}}" placeholder="Ingrese el ID">
 
                 </div>
 
                 <div class="form-group">
-                    <label for="nombre_carrera">Nombre de la Carrera</label>
+                    <label for="nombre_clase">Nombre de la Clase</label>
 
-                    <input type="text" class="form-control" name="nombre_carrera" value="{{ $carreras->nombre_carrera }}" placeholder="Ingrese el nombre de la Carrera">
+                    <input type="text" class="form-control" name="nombre_clase" value="{{ $clases->nombre_clase }}" placeholder="Ingrese el nombre de la Clase">
 
                 </div>
         

@@ -17,7 +17,7 @@
                 </div>
             @endif
         
-            <form action="{{route('usuarios.update', $user->id)}}" method="POST">
+            <form action="{{route('usercontroller.update', $user->id)}}" method="POST">
             @method('PATCH')
             @csrf
                 <div class="form-group">

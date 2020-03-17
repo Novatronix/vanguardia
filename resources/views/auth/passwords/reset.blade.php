@@ -5,10 +5,10 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header">{{ __('Reset Password') }}</div>
+                <div class="card-header">{{ __('Reset ') }}</div>
 
                 <div class="card-body">
-                    <form method="POST" action="{{ route('password.request') }}" aria-label="{{ __('Reset Password') }}">
+                    <form method="POST" action="{{ route('password.request') }}" aria-label="{{ __('Recuperar Contraseña') }}">
                         @csrf
 
                         <input type="hidden" name="token" value="{{ $token }}">

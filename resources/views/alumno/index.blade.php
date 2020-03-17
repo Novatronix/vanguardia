@@ -9,16 +9,16 @@
 <button type="button" class="btn btn-success float-right">Agregar alumno</button></a>
 </h2>
   
-  <table class="table table-hover">
-    <thead>
+<table class="table table-striped">
+    <thead class="thead">
       <tr>
         <th scope="col">Numero de cuenta</th>
         <th scope="col">Nombre</th>
         <th scope="col">Apellido</th>
         <th scope="col">Fecha de Ingreso</th>
-        <th scioe="col">genero</th>
-        <th scioe="col">telefono</th>
-        <th scioe="col">estado</th>
+        <th scioe="col">Genero</th>
+        <th scioe="col">Telefono</th>
+        <th scioe="col">Estado</th>
       </tr>
     </thead>
     <tbody>

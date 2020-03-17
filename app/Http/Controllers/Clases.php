@@ -12,6 +12,10 @@ class Clases extends Controller
 {
     public function index()
     {
+        if(!\Auth::check())
+        {
+            return redirect('/login');
+        }
         $clases = Clase::all();
         return view('clase.index', ['clases'=> $clases]);
         //
@@ -22,6 +26,10 @@ class Clases extends Controller
 
     public function store(Request $request)
     {
+        if(!\Auth::check())
+        {
+            return redirect('/login');
+        }
         $clases = new Clase();
         $clases-> id_clase = request ('id_clase');
         $clases-> nombre_clase = request ('nombre_clase');
@@ -37,6 +45,10 @@ class Clases extends Controller
   
     public function show($id_clase)
     {
+        if(!\Auth::check())
+        {
+            return redirect('/login');
+        }
         return view('clase.show', ['clases' => Clase::findOrFail($id_clase)]);
 
     }
@@ -44,14 +56,23 @@ class Clases extends Controller
    
     public function edit($id_clase)
     {
-        return view('clases.edit', ['clases' => Clase::findOrFail($id_clase)]);
+        if(!\Auth::check())
+        {
+            return redirect('/login');
+        }
+        return view('clase.edit', ['clases' => Clase::findOrFail($id_clase)]);
         //
     }
 
   
     public function update(UserFormRequest $request, $id_clase)
     {
+        if(!\Auth::check())
+        {
+            return redirect('/login');
+        }
         $clases =  Clase::findOrFail($id_clase);
+        $clases-> id_clase = $request -> get('id_clase');
         $clases-> nombre_clase = $request -> get('nombre_clase');
         
 
@@ -62,8 +83,12 @@ class Clases extends Controller
         //
     }
 
-    public function destroy($id)
+    public function destroy($id_clase)
     {
+        if(!\Auth::check())
+        {
+            return redirect('/login');
+        }
         $clases = Clase::findOrFail($id_clase);
         $clases->delete();
 

@@ -5,7 +5,7 @@
 
 <div class="container">
 <h2>Lista de Clases <a href="clase/create"> <button type="button" class="btn btn-success float-right">Agregar Clase</button></a></h2>
-  <table class="table table-hover">
+<table class="table table-striped">
     <thead>
       <tr>
         <th scope="col">ID Clase</th>

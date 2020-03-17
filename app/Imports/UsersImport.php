@@ -7,11 +7,15 @@ use Maatwebsite\Excel\Concerns\ToModel;
 
 class UsersImport implements ToModel
 {
+    public $timestamps = false;
+    
     /**
     * @param array $row
     *
     * @return \Illuminate\Database\Eloquent\Model|null
     */
+
+    
     public function model(array $row)
     {
         return new Alumno([
@@ -22,10 +26,8 @@ class UsersImport implements ToModel
            'genero'       => $row[4], 
            'telefono'     => $row[5],
            'estado'       => $row[6],
-           'created_at'   => $row[7],
-           'updated_at'   => $row[8],
-
-            //
+  
+          //
         ]);
     }
 }
